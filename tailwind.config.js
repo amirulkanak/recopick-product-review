@@ -20,6 +20,9 @@ module.exports = {
         'clr-accent': '#79D7BE',
         'clr-neutral': '#F6F4F0',
       },
+      backgroundImage: {
+        'add-queries-bg': "url('/images/review-illustrator.png')", // Replace with your image path
+      },
     },
   },
   plugins: [],
