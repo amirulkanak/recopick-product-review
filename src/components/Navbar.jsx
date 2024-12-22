@@ -2,12 +2,11 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import recopickLogo from '../assets/icons/logo-recopick.png';
 import { LiaAlignLeftSolid } from 'react-icons/lia';
-// import useAuth from '../hooks/useAuth';
+import useAuth from '../hooks/useAuth';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  // const { user, logOut } = useAuth();
-  const user = true;
+  const { user, logOut } = useAuth();
 
   return (
     <section className="bg-clr-neutral/10">
@@ -44,10 +43,14 @@ const Navbar = () => {
                 <NavLink to={'/my-recommendations'}>My recommendations</NavLink>
               )}
 
-              {user && <button className="btn">Logout</button>}
+              {user && (
+                <button onClick={logOut} className="btn">
+                  Logout
+                </button>
+              )}
 
               {!user && (
-                <NavLink to={'/auth/login'} className="btn">
+                <NavLink to={'/login'} className="btn">
                   Login
                 </NavLink>
               )}
