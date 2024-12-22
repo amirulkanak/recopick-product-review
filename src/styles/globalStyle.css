@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +9,14 @@
 }
 /* ------------------------- */
 
+.active {
+  @apply text-blue-900;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-md bg-clr-accent text-clr-primary;
+}
+
 @layer components {
   .max-width-wrapper {
     @apply max-w-[82.5rem] w-full mx-auto pc:px-0 px-4;
@@ -16,6 +25,6 @@
 
 @layer utilities {
   body {
-    @apply font-lato;
+    @apply font-mona bg-white text-black;
   }
 }

@@ -10,12 +10,15 @@ module.exports = {
       },
       // Custom font family
       fontFamily: {
-        lato: ['"Lato"', 'sans-serif'],
+        mona: ['"Mona Sans"', 'serif'],
       },
       // Custom colors
       colors: {
-        'clr-woodsmoke': '#131313',
-        'clr-paradiso': '#0E7A81',
+        'clr-primary': '#2E5077',
+        'clr-primary-text': '#1a2637',
+        'clr-secondary': '#4DA1A9',
+        'clr-accent': '#79D7BE',
+        'clr-neutral': '#F6F4F0',
       },
     },
   },
