@@ -1,6 +1,25 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const MyQueriesPage = () => {
+  const [myQueries, setMyQueries] = useState([]);
+
+  useEffect(() => {
+    const fetchMyQueries = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKEND_API_URL}/query/all`
+        );
+        console.log(response.data);
+      } catch (error) {
+        console.error('Error fetching queries:', error);
+      }
+    };
+
+    fetchMyQueries();
+  }, []);
+
   return (
     <>
       {/* Banner */}

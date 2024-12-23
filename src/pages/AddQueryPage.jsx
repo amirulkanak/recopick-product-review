@@ -1,5 +1,11 @@
+import AddQueryForm from '../components/AddQueryForm';
+
 const AddQueryPage = () => {
-  return <div>AddQueryPage</div>;
+  return (
+    <div>
+      <AddQueryForm />
+    </div>
+  );
 };
 
 export default AddQueryPage;
