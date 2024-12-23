@@ -1,4 +1,4 @@
-const MyQueryCard = ({ query }) => {
+const MyQueryCard = ({ query, handleDelete }) => {
   return (
     <div className="max-w-lg mx-auto bg-clr-accent/10 shadow-lg rounded-lg overflow-hidden border">
       <div className="p-4">
@@ -6,16 +6,16 @@ const MyQueryCard = ({ query }) => {
           <img
             src={query.productImageURL}
             alt={query.productName}
-            className="w-16 h-16 object-cover rounded-md border"
+            className="size-28 object-cover rounded-md border"
           />
           <div>
-            <h2 className="text-lg font-semibold">{query.productName}</h2>
+            <h2 className="text-xl font-semibold">{query.productName}</h2>
             <p className="text-sm text-gray-700">{query.productBrand}</p>
           </div>
         </div>
         <div className="mt-4">
-          <h3 className="text-md font-bold">{query.queryTitle}</h3>
-          <p className="text-sm text-gray-700 mt-2">
+          <h3 className="text-lg font-bold">{query.queryTitle}</h3>
+          <p className="text-base text-gray-700 mt-2">
             {query.boycottingReasonDetails}
           </p>
         </div>
@@ -46,7 +46,7 @@ const MyQueryCard = ({ query }) => {
             Update
           </button>
           <button
-            // onClick={() => onDelete(query._id)}
+            onClick={() => handleDelete(query._id)}
             className="bg-red-500/90 text-white px-4 py-2 rounded-md hover:bg-red-600">
             Delete
           </button>

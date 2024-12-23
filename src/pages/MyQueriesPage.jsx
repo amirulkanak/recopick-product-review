@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import MyQueryCard from '../components/MyQueryCard';
 import LoadingSpinner from './../components/LoadingSpinner';
+import Swal from 'sweetalert2';
 
 const MyQueriesPage = () => {
   const [myQueries, setMyQueries] = useState([]);
@@ -27,9 +28,43 @@ const MyQueriesPage = () => {
     };
 
     fetchMyQueries();
-  }, []);
+  }, [myQueries]);
 
-  console.log(myQueries);
+  const deleteQuery = async (id) => {
+    try {
+      const { data } = await axios.delete(
+        `${import.meta.env.VITE_BACKEND_API_URL}/query/delete/${id}`
+      );
+      if (data.success) {
+        Swal.fire({
+          title: 'Deleted!',
+          text: `${data.message}`,
+          icon: 'success',
+        });
+      }
+      setMyQueries(myQueries.filter((query) => query._id !== id));
+    } catch (error) {
+      console.error('Error deleting query:', error);
+    }
+  };
+
+  //  delete query
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: 'Want to delete?',
+      text: 'The query will be deleted permanently from your list',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Confirm',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteQuery(id);
+      }
+    });
+  };
+
   return (
     <>
       {/* Banner */}
@@ -59,17 +94,31 @@ const MyQueriesPage = () => {
           My Query List
         </h2>
         {myQueries.length === 0 ? (
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center text-lg">
             {loading ? (
               <LoadingSpinner size={3} />
             ) : (
-              ' Your List is empty. Please add some query.'
+              <div className="text-center">
+                <div className="mb-5">
+                  {' '}
+                  Your List is empty. Please add some query.
+                </div>
+                <Link
+                  to={'/add-query'}
+                  className="mt-7 btn rounded-lg shadow-md hover:bg-clr-primary hover:text-clr-neutral transition-all">
+                  Add Query
+                </Link>
+              </div>
             )}
           </div>
         ) : (
           <div className="grid gap-5 w-fit mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center">
             {myQueries.map((query) => (
-              <MyQueryCard key={query._id} query={query} />
+              <MyQueryCard
+                key={query._id}
+                query={query}
+                handleDelete={handleDelete}
+              />
             ))}
           </div>
         )}
