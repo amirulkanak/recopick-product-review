@@ -18,7 +18,7 @@ const SwiperComponent = () => {
       slidesPerView={1}
       centeredSlides={true}
       loop={true}
-      autoplay={{ delay: 3000, disableOnInteraction: true }}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
       pagination={{ clickable: true, dynamicBullets: true }}
       navigation={false}>
       <SwiperSlide>

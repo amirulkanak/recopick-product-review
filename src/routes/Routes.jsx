@@ -11,6 +11,7 @@ import AddQueryPage from '../pages/AddQueryPage';
 import MyQueryUpdatePage from '../pages/MyQueryUpdatePage';
 import LoadingSpinner from '../components/LoadingSpinner';
 import axios from 'axios';
+import AllQueriesPage from '../pages/AllQueriesPage';
 
 const routes = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const routes = createBrowserRouter([
       {
         path: '/',
         element: <HomePage />,
+      },
+      {
+        path: '/queries',
+        element: <AllQueriesPage />,
       },
       {
         path: '/my-queries',
