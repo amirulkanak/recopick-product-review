@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
+
 const QueryCard = ({ query }) => {
-  const { productName, productImageURL, queryTitle, recommendationCount } =
+  const { _id, productName, productImageURL, queryTitle, recommendationCount } =
     query;
   return (
     <div className="max-w-lg bg-clr-accent/10 border rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -18,9 +20,11 @@ const QueryCard = ({ query }) => {
             Recommendations:{' '}
             <span className="font-medium">{recommendationCount}</span>
           </span>
-          <button className="bg-clr-primary text-white text-sm px-4 py-2 rounded-lg hover:bg-clr-primary-text transition-colors">
+          <Link
+            to={`/query-details/${_id}`}
+            className="bg-clr-primary text-white text-sm px-4 py-2 rounded-lg hover:bg-clr-primary-text transition-colors">
             Recommend
-          </button>
+          </Link>
         </div>
       </div>
     </div>

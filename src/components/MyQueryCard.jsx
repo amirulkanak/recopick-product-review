@@ -37,10 +37,12 @@ const MyQueryCard = ({ query, handleDelete }) => {
           </p>
         </div>
         <div className="flex justify-end mt-4 space-x-3">
-          <button
-            // onClick={() => onViewDetails(query._id)}
-            className="bg-clr-secondary text-white px-4 py-2 rounded-md hover:bg-opacity-90">
-            View Details
+          <button>
+            <Link
+              to={`/query-details/${query._id}`}
+              className="bg-clr-secondary text-white px-4 py-2 rounded-md hover:bg-opacity-90">
+              View Details
+            </Link>
           </button>
           <button>
             <Link

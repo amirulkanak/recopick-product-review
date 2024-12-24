@@ -12,6 +12,7 @@ import MyQueryUpdatePage from '../pages/MyQueryUpdatePage';
 import LoadingSpinner from '../components/LoadingSpinner';
 import axios from 'axios';
 import AllQueriesPage from '../pages/AllQueriesPage';
+import QueryDetailsPage from '../pages/QueryDetailsPage';
 
 const routes = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const routes = createBrowserRouter([
       {
         path: '/queries',
         element: <AllQueriesPage />,
+      },
+      {
+        path: '/query-details/:id',
+        element: <QueryDetailsPage />,
       },
       {
         path: '/my-queries',
