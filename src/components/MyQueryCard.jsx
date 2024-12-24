@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const MyQueryCard = ({ query, handleDelete }) => {
   return (
     <div className="max-w-lg mx-auto bg-clr-accent/10 shadow-lg rounded-lg overflow-hidden border">
@@ -40,10 +42,12 @@ const MyQueryCard = ({ query, handleDelete }) => {
             className="bg-clr-secondary text-white px-4 py-2 rounded-md hover:bg-opacity-90">
             View Details
           </button>
-          <button
-            // onClick={() => onUpdate(query._id)}
-            className="bg-clr-primary-text/80 text-white px-4 py-2 rounded-md hover:hover:bg-opacity-100">
-            Update
+          <button>
+            <Link
+              to={`/update-query/${query._id}`}
+              className="bg-clr-primary-text/80 text-white px-4 py-2 rounded-md hover:hover:bg-opacity-100">
+              Update
+            </Link>
           </button>
           <button
             onClick={() => handleDelete(query._id)}

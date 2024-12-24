@@ -8,6 +8,9 @@ import RegisterPage from '../pages/RegisterPage';
 import PrivateRoute from './PrivateRoute';
 import MyQueriesPage from '../pages/MyQueriesPage';
 import AddQueryPage from '../pages/AddQueryPage';
+import MyQueryUpdatePage from '../pages/MyQueryUpdatePage';
+import LoadingSpinner from '../components/LoadingSpinner';
+import axios from 'axios';
 
 const routes = createBrowserRouter([
   {
@@ -32,6 +35,14 @@ const routes = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddQueryPage />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/update-query/:id',
+        element: (
+          <PrivateRoute>
+            <MyQueryUpdatePage />
           </PrivateRoute>
         ),
       },
