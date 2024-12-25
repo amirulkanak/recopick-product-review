@@ -28,8 +28,6 @@ const RecommendationsForMe = () => {
     fetchRecommendations();
   }, [user.email]);
 
-  console.log('recommendationsData:', recommendationsData);
-
   return (
     <section className="max-width-wrapper mt-10 px-4">
       <h2 className="text-3xl font-semibold mb-10 text-center">
