@@ -17,7 +17,7 @@ const PrivateRoute = ({ children }) => {
   return isAuthenticated ? (
     children
   ) : (
-    <Navigate to="/auth/login" state={pathname} replace />
+    <Navigate to="/login" state={pathname} replace />
   );
 };
 

@@ -13,6 +13,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import axios from 'axios';
 import AllQueriesPage from '../pages/AllQueriesPage';
 import QueryDetailsPage from '../pages/QueryDetailsPage';
+import MyRecommendationsPage from '../pages/MyRecommendationsPage';
 
 const routes = createBrowserRouter([
   {
@@ -37,6 +38,14 @@ const routes = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyQueriesPage />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/my-recommendations',
+        element: (
+          <PrivateRoute>
+            <MyRecommendationsPage />
           </PrivateRoute>
         ),
       },
