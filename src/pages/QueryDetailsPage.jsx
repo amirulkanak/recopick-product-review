@@ -3,27 +3,27 @@ import QueryDetailsCard from '../components/QueryDetailsCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import AddRecommendationForm from '../components/AddRecommendationForm';
 
 const QueryDetailsPage = () => {
   const [queryData, setQueryData] = useState({});
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
+  const fetchQuery = async () => {
+    try {
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_BACKEND_API_URL}/query/${id}`
+      );
+      setQueryData(data.result);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching query:', error);
+    }
+  };
   useEffect(() => {
-    const fetchQuery = async () => {
-      try {
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_BACKEND_API_URL}/query/${id}`
-        );
-        setQueryData(data.result);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching query:', error);
-      }
-    };
-
     fetchQuery();
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -47,6 +47,9 @@ const QueryDetailsPage = () => {
           Add Recommendation
         </h2>
         {/* Add Recommendation Form  */}
+        {!loading && (
+          <AddRecommendationForm query={queryData} refetch={fetchQuery} />
+        )}
       </section>
     </>
   );
