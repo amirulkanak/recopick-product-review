@@ -6,32 +6,39 @@ import PasswordInput from './../components/ui/PasswordInput';
 import InputBox from './../components/ui/InputBox';
 import useAuth from './../hooks/useAuth';
 import notify from '../utils/notify';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const RegisterPage = () => {
   document.title = 'Sign Up | Recopick';
   window.scrollTo(0, 0);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [gloading, setGLoading] = useState(false);
   const navigate = useNavigate();
   const { setUser, signUp, updateUserProfile, loginWithGooglePopup } =
     useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setLoading(true);
     setError('');
     const formData = Object.fromEntries(new FormData(event.target));
 
     if (!formData.fullName) {
       setError('Full name is required.');
+      setLoading(false);
       return;
     }
 
     if (!formData.photoUrl) {
       setError('Photo url is required.');
+      setLoading(false);
       return;
     }
 
     if (!validateEmail(formData.email)) {
       setError('Invalid email. Please check email address.');
+      setLoading(false);
       return;
     }
 
@@ -39,6 +46,7 @@ const RegisterPage = () => {
       setError(
         'Password must includes 6 characters, an uppercase and a lowercase letters.'
       );
+      setLoading(false);
       return;
     }
 
@@ -48,12 +56,14 @@ const RegisterPage = () => {
         setUser(result.user);
         // update user profile
         updateUserProfile(formData.fullName, formData.photoUrl);
+        setLoading(false);
         notify.success(`Sign up Successful`);
         // clear input fields after submit
         event.target.reset();
         navigate('/');
       })
       .catch((error) => {
+        setLoading(false);
         notify.error('Error');
         setError(
           'Failed to login with Google. Please try again. ' + error.message
@@ -63,13 +73,16 @@ const RegisterPage = () => {
 
   // Login with Google
   const handleLoginWithGoogle = () => {
+    setGLoading(true);
     loginWithGooglePopup()
       .then((result) => {
         setUser(result.user);
+        setGLoading(false);
         notify.success(`Welcome ${result.user.displayName}`);
         navigate('/');
       })
       .catch((error) => {
+        setGLoading(false);
         setError(
           'Failed to login with Google. Please try again. ' + error.message
         );
@@ -105,11 +118,12 @@ const RegisterPage = () => {
                 </span>
 
                 <div className="mb-10">
-                  <input
+                  <button
                     type="submit"
-                    value="Sign Up"
-                    className="w-full cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium bg-minsk-500 text-white transition hover:bg-opacity-90"
-                  />
+                    disabled={loading}
+                    className="w-full flex items-center justify-center cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium transition hover:bg-opacity-90">
+                    {loading ? <LoadingSpinner size={1} /> : 'Sign Up'}
+                  </button>
                 </div>
               </form>
 
@@ -126,12 +140,20 @@ const RegisterPage = () => {
 
               <div className="my-6 h-[1px] bg-clr-secondary"></div>
 
-              <div
+              <button
+                type="button"
                 onClick={handleLoginWithGoogle}
-                className="w-full cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium">
-                <FcGoogle className="text-2xl inline mr-2" />
-                Sign up with Google
-              </div>
+                disabled={gloading}
+                className="w-full flex items-center justify-center cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium">
+                {gloading ? (
+                  <LoadingSpinner size={1} />
+                ) : (
+                  <span>
+                    <FcGoogle className="text-2xl inline mr-2" />
+                    Login with Google
+                  </span>
+                )}
+              </button>
 
               <div>
                 <span className="absolute right-0 top-0">

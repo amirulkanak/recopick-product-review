@@ -25,9 +25,6 @@ const UserAuthContextProvider = ({ children }) => {
   // Create a state to store the loading state
   const [loading, setLoading] = useState(true);
 
-  // create a state to store email for forgot password
-  const [forgotEmail, setForgotEmail] = useState('');
-
   // Create a function to sign up a user
   const signUp = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -92,8 +89,6 @@ const UserAuthContextProvider = ({ children }) => {
     loading,
     sendPasswordResetEmailToUser,
     updateUserProfile,
-    forgotEmail,
-    setForgotEmail,
   };
 
   return (

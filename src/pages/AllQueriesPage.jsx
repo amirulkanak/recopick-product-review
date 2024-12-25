@@ -4,6 +4,7 @@ import axios from 'axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const AllQueriesPage = () => {
+  document.title = 'All Queries | Recopick';
   const [queries, setQueries] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [gridLayout, setGridLayout] = useState(3);
@@ -71,7 +72,7 @@ const AllQueriesPage = () => {
 
         {/* Product Grid */}
         <div
-          className={`w-fit mx-auto grid gap-5 ${
+          className={`w-fit mb-10 mx-auto grid gap-5 ${
             gridLayout === 1
               ? 'grid-cols-1'
               : gridLayout === 2

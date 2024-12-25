@@ -6,6 +6,7 @@ import MyRecommendationsTable from '../components/MyRecommendationsTable';
 import Swal from 'sweetalert2';
 
 const MyRecommendationsPage = () => {
+  document.title = 'My Recommendations | Recopick';
   const { user } = useAuth();
   const [recommendationsData, setRecommendationsData] = useState([]);
   const [loading, setLoading] = useState(true);

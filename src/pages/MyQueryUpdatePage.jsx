@@ -5,6 +5,7 @@ import axios from 'axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const MyQueryUpdatePage = () => {
+  document.title = 'Update Query | Recopick';
   const [queryData, setQueryData] = useState();
   const [loading, setLoading] = useState(true);
   const { id } = useParams();

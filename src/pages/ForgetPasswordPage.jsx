@@ -3,33 +3,37 @@ import { validateEmail } from '../utils/validator';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import notify from '../utils/notify';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const ForgetPasswordPage = () => {
   document.title = 'Forget Password | Recopick';
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { sendPasswordResetEmailToUser, forgotEmail, setForgotEmail } =
-    useAuth();
+  const { sendPasswordResetEmailToUser } = useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setLoading(true);
     setError('');
     const formData = Object.fromEntries(new FormData(event.target));
 
     if (!validateEmail(formData.email)) {
       setError('Invalid email. Please check email address.');
+      setLoading(false);
       return;
     }
     sendPasswordResetEmailToUser(formData.email)
       .then((result) => {
         notify.success(`Check your email for password reset link.`);
-        setForgotEmail('');
+        setLoading(false);
         navigate('/login');
       })
       .catch((error) => {
         setError(
           'Failed to login with Google. Please try again. ' + error.message
         );
+        setLoading(false);
       });
   };
 
@@ -53,7 +57,6 @@ const ForgetPasswordPage = () => {
                     type="email"
                     placeholder="Email"
                     name="email"
-                    defaultValue={forgotEmail}
                     className="w-full rounded-md border border-minsk-200 bg-transparent px-5 py-3 text-base outline-none focus-visible:shadow-none"
                   />
                 </div>
@@ -63,11 +66,12 @@ const ForgetPasswordPage = () => {
                 </span>
 
                 <div className="mb-10">
-                  <input
+                  <button
                     type="submit"
-                    value="Reset Password"
-                    className="w-full cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium text-white transition hover:bg-opacity-90"
-                  />
+                    disabled={loading}
+                    className="w-full flex items-center justify-center cursor-pointer rounded-md border btn px-5 py-3 text-base font-medium transition hover:bg-opacity-90">
+                    {loading ? <LoadingSpinner size={1} /> : 'Reset Password'}
+                  </button>
                 </div>
               </form>
 

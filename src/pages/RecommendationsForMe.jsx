@@ -5,6 +5,7 @@ import RecommendationsForMeTable from '../components/RecommendationsForMeTable';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const RecommendationsForMe = () => {
+  document.title = 'Recommendations For Me | Recopick';
   const { user } = useAuth();
   const [recommendationsData, setRecommendationsData] = useState([]);
   const [loading, setLoading] = useState(true);

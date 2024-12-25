@@ -4,6 +4,7 @@ import LatestQuerySection from '../components/LatestQuerySection';
 import Header from './../components/Header';
 
 const HomePage = () => {
+  document.title = 'Home | Recopick';
   return (
     <>
       <Header />

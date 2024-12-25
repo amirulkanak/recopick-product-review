@@ -28,7 +28,7 @@ const Navbar = () => {
           </button>
 
           <div
-            className={`absolute right-4 z-20 top-full w-full max-w-[250px] rounded-lg bg-clr-accent/50 lg:bg-transparent px-6 py-5 lg:px-0 lg:py-0 shadow lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none ${
+            className={`absolute right-4 z-20 top-full w-full max-w-[250px] rounded-lg bg-clr-accent lg:bg-transparent px-6 py-5 lg:px-0 lg:py-0 shadow lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none ${
               !open && 'hidden'
             } `}>
             {/* Links */}
@@ -45,6 +45,16 @@ const Navbar = () => {
               {user && <NavLink to={'/my-queries'}>My Queries</NavLink>}
               {user && (
                 <NavLink to={'/my-recommendations'}>My recommendations</NavLink>
+              )}
+
+              {user && (
+                <div className="h-[42px] w-[42px] rounded-full border">
+                  <img
+                    src={user.photoURL}
+                    alt={user.displayName}
+                    className="h-full w-full rounded-full object-cover object-center"
+                  />
+                </div>
               )}
 
               {user && (

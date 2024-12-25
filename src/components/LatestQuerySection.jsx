@@ -36,7 +36,7 @@ const LatestQuerySection = () => {
         </div>
       )}
       {!loading && (
-        <div className="grid grid-cols-1 gap-5 mt-10 md:grid-cols-2 pc:grid-cols-3">
+        <div className="grid w-fit mx-auto grid-cols-1 gap-5 mt-10 md:grid-cols-2 pc:grid-cols-3">
           {queries.map((query) => (
             <QueryCard key={query._id} query={query} />
           ))}

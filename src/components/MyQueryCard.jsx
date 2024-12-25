@@ -36,7 +36,7 @@ const MyQueryCard = ({ query, handleDelete }) => {
             })}
           </p>
         </div>
-        <div className="flex justify-end mt-4 space-x-3">
+        <div className="flex text-sm sm:text-base justify-end mt-4 space-x-3">
           <button>
             <Link
               to={`/query-details/${query._id}`}

@@ -7,6 +7,7 @@ import LoadingSpinner from './../components/LoadingSpinner';
 import Swal from 'sweetalert2';
 
 const MyQueriesPage = () => {
+  document.title = 'My Queries | Recopick';
   const [myQueries, setMyQueries] = useState([]);
   const [loading, setLoading] = useState(true);
   const { user } = useAuth();

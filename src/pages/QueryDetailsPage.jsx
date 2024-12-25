@@ -7,6 +7,7 @@ import AddRecommendationForm from '../components/AddRecommendationForm';
 import RecommendationComment from '../components/RecommendationComment';
 
 const QueryDetailsPage = () => {
+  document.title = 'Query Details | Recopick';
   const [queryData, setQueryData] = useState({});
   const [recommendationData, setRecommendationData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -75,7 +76,7 @@ const QueryDetailsPage = () => {
       </section>
 
       {/* All Recommendation comments */}
-      <section className="max-width-wrapper mt-10">
+      <section className="max-width-wrapper mt-10 mb-20">
         <h2 className="text-3xl font-semibold mb-10 text-center">
           All Recommendations
         </h2>
