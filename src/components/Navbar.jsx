@@ -9,11 +9,15 @@ const Navbar = () => {
   const { user, logOut } = useAuth();
 
   return (
-    <section className="bg-clr-neutral/10">
-      <nav className="max-width-wrapper relative pt-12 flex items-center justify-between py-8 ">
+    <section className="bg-gradient-to-r from-violet-500/20 to-purple-500/30">
+      <nav className="max-width-wrapper relative flex items-center justify-between py-8 ">
         {/* Logo */}
         <NavLink to={'/'} className="w-60">
-          <img src={recopickLogo} alt="Recopick Logo" />
+          <img
+            className="bg-clr-primary/10 rounded-lg p-1"
+            src={recopickLogo}
+            alt="Recopick Logo"
+          />
         </NavLink>
 
         <div>
