@@ -3,6 +3,7 @@ import useAuth from './../hooks/useAuth';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import LoadingSpinner from './LoadingSpinner';
+import { Link } from 'react-router-dom';
 
 const AddRecommendationForm = ({ query, refetch }) => {
   const [formData, setFormData] = useState({
@@ -32,6 +33,7 @@ const AddRecommendationForm = ({ query, refetch }) => {
       userEmail: query.user.email,
       userName: query.user.name,
       recommenderEmail: user.email,
+      recommenderPhoto: user.photoURL,
       recommenderName: user.displayName,
       createdAt: new Date().toISOString(),
     };
@@ -50,7 +52,8 @@ const AddRecommendationForm = ({ query, refetch }) => {
           confirmButtonText: 'Ok',
         });
         setLoading(false);
-        refetch();
+        refetch.query();
+        refetch.recommendation();
       } else {
         setLoading(false);
         Swal.fire({
@@ -153,7 +156,7 @@ const AddRecommendationForm = ({ query, refetch }) => {
         </div>
 
         {/* Submit Button */}
-        {true ? (
+        {user ? (
           <button
             type="submit"
             disabled={loading}
@@ -161,8 +164,12 @@ const AddRecommendationForm = ({ query, refetch }) => {
             {loading ? <LoadingSpinner size={1} /> : `Add Recommendation`}
           </button>
         ) : (
-          <div className="w-full text-center px-4 py-2 text-white bg-clr-primary-text rounded-md shadow-sm hover:bg-opacity-80">
-            Please login to add recommendation
+          <div className="w-full flex items-center justify-center">
+            <Link
+              to={'/login'}
+              className="w-full text-center px-4 py-2 text-white bg-clr-primary-text rounded-md shadow-sm hover:bg-opacity-80">
+              Please login to add recommendation
+            </Link>
           </div>
         )}
       </form>

@@ -98,7 +98,7 @@ const ForgetPasswordPage = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
                     xmlns:svgjs="http://svgjs.dev/svgjs"
                     width="100"
                     height="100"
@@ -107,28 +107,28 @@ const ForgetPasswordPage = () => {
                     <g mask='url("#SvgjsMask1125")' fill="none">
                       <path
                         d="M26 14L-19 59"
-                        stroke-width="10"
+                        strokeWidth="10"
                         stroke='url("#SvgjsLinearGradient1126")'
-                        stroke-linecap="round"
-                        class="BottomLeft"></path>
+                        strokeLinecap="round"
+                        className="BottomLeft"></path>
                       <path
                         d="M28 29L67 -10"
-                        stroke-width="8"
+                        strokeWidth="8"
                         stroke='url("#SvgjsLinearGradient1127")'
-                        stroke-linecap="round"
-                        class="TopRight"></path>
+                        strokeLinecap="round"
+                        className="TopRight"></path>
                       <path
                         d="M73 79L124 28"
-                        stroke-width="8"
+                        strokeWidth="8"
                         stroke='url("#SvgjsLinearGradient1128")'
-                        stroke-linecap="round"
-                        class="BottomLeft"></path>
+                        strokeLinecap="round"
+                        className="BottomLeft"></path>
                       <path
                         d="M31 80L92 19"
-                        stroke-width="6"
+                        strokeWidth="6"
                         stroke='url("#SvgjsLinearGradient1128")'
-                        stroke-linecap="round"
-                        class="BottomLeft"></path>
+                        strokeLinecap="round"
+                        className="BottomLeft"></path>
                     </g>
                     <defs>
                       <mask id="SvgjsMask1125">
@@ -141,10 +141,10 @@ const ForgetPasswordPage = () => {
                         y2="100%"
                         id="SvgjsLinearGradient1126">
                         <stop
-                          stop-color="rgba(52, 197, 90, 0)"
+                          stopColor="rgba(52, 197, 90, 0)"
                           offset="0"></stop>
                         <stop
-                          stop-color="rgba(52, 197, 90, 1)"
+                          stopColor="rgba(52, 197, 90, 1)"
                           offset="1"></stop>
                       </linearGradient>
                       <linearGradient
@@ -154,10 +154,10 @@ const ForgetPasswordPage = () => {
                         y2="0%"
                         id="SvgjsLinearGradient1127">
                         <stop
-                          stop-color="rgba(44, 57, 197, 0)"
+                          stopColor="rgba(44, 57, 197, 0)"
                           offset="0"></stop>
                         <stop
-                          stop-color="rgba(44, 57, 197, 1)"
+                          stopColor="rgba(44, 57, 197, 1)"
                           offset="1"></stop>
                       </linearGradient>
                       <linearGradient
@@ -167,10 +167,10 @@ const ForgetPasswordPage = () => {
                         y2="100%"
                         id="SvgjsLinearGradient1128">
                         <stop
-                          stop-color="rgba(165, 21, 67, 0)"
+                          stopColor="rgba(165, 21, 67, 0)"
                           offset="0"></stop>
                         <stop
-                          stop-color="rgba(165, 21, 67, 1)"
+                          stopColor="rgba(165, 21, 67, 1)"
                           offset="1"></stop>
                       </linearGradient>
                     </defs>
@@ -180,7 +180,7 @@ const ForgetPasswordPage = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
                     xmlns:svgjs="http://svgjs.dev/svgjs"
                     width="530"
                     height="55"
