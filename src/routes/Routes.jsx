@@ -14,6 +14,7 @@ import axios from 'axios';
 import AllQueriesPage from '../pages/AllQueriesPage';
 import QueryDetailsPage from '../pages/QueryDetailsPage';
 import MyRecommendationsPage from '../pages/MyRecommendationsPage';
+import RecommendationsForMe from '../pages/RecommendationsForMe';
 
 const routes = createBrowserRouter([
   {
@@ -46,6 +47,14 @@ const routes = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyRecommendationsPage />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/recommendations',
+        element: (
+          <PrivateRoute>
+            <RecommendationsForMe />
           </PrivateRoute>
         ),
       },

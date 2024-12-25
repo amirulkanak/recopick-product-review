@@ -30,7 +30,7 @@ const QueryDetailsPage = () => {
   const fetchRecommendation = async () => {
     try {
       const { data } = await axios.get(
-        `${import.meta.env.VITE_BACKEND_API_URL}/recommendation/all/${id}`
+        `${import.meta.env.VITE_BACKEND_API_URL}/recommendation/comments/${id}`
       );
       setRecommendationData(data.result);
       setLoadingRecom(false);

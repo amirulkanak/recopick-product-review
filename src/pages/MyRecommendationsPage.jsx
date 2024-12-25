@@ -76,7 +76,9 @@ const MyRecommendationsPage = () => {
         </div>
       ) : null}
       {!loading && recommendationsData.length === 0 ? (
-        <p className="text-center text-xl">No Recommendations Found</p>
+        <p className="text-center text-xl">
+          You didn't give any recommendation to a Query Yet!
+        </p>
       ) : null}
       {/* Table */}
       {/* Recommendation table */}
