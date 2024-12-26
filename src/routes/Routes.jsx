@@ -9,8 +9,6 @@ import PrivateRoute from './PrivateRoute';
 import MyQueriesPage from '../pages/MyQueriesPage';
 import AddQueryPage from '../pages/AddQueryPage';
 import MyQueryUpdatePage from '../pages/MyQueryUpdatePage';
-import LoadingSpinner from '../components/LoadingSpinner';
-import axios from 'axios';
 import AllQueriesPage from '../pages/AllQueriesPage';
 import QueryDetailsPage from '../pages/QueryDetailsPage';
 import MyRecommendationsPage from '../pages/MyRecommendationsPage';

@@ -36,4 +36,4 @@ the Details and other recommendations also.
 - sweetalert2
 
 ## Live Preview 
-[Recopick](https://kanak-6bac3.web.app/)
+[Recopick](https://recopick-amirulkanak.web.app/)
