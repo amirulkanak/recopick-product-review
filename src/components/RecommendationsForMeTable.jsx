@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const RecommendationsForMeTable = ({ recommendationsData }) => {
   return (
-    <div className="overflow-x-auto">
+    <div data-aos="zoom-in" className="overflow-x-auto">
       <table className="min-w-full bg-white">
         <thead>
           <tr>

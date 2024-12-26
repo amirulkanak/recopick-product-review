@@ -2,8 +2,11 @@ import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => {
   document.title = 'Not Found | Recopick';
+  window.scrollTo(0, 0);
   return (
-    <section className="bg-gradient-to-r from-violet-500/20 to-purple-500/30">
+    <section
+      data-aos="fade-in"
+      className="bg-gradient-to-r from-violet-500/20 to-purple-500/30">
       <div className="flex flex-col gap-6 items-center justify-center h-screen">
         <h1 className="text-5xl font-bold bg-gradient-to-r from-red-700 to-orange-400 bg-clip-text text-transparent">
           404

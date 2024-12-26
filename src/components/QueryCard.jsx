@@ -4,7 +4,10 @@ const QueryCard = ({ query }) => {
   const { _id, productName, productImageURL, queryTitle, recommendationCount } =
     query;
   return (
-    <div className="max-w-lg bg-clr-accent/10 border rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <div
+      data-aos="zoom-in"
+      data-aos-once="true"
+      className="max-w-lg bg-clr-accent/10 border rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div className="relative w-full h-48">
         <img
           src={productImageURL}

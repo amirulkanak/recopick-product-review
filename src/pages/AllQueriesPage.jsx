@@ -5,6 +5,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 
 const AllQueriesPage = () => {
   document.title = 'All Queries | Recopick';
+  window.scrollTo(0, 0);
   const [queries, setQueries] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [gridLayout, setGridLayout] = useState(3);
@@ -38,11 +39,15 @@ const AllQueriesPage = () => {
   return (
     <section className="bg-clr-neutral p-4 min-h-screen">
       <div className="max-width-wrapper">
-        <h2 className="text-2xl font-semibold mb-10 text-center mt-20">
+        <h2
+          data-aos="fade-up"
+          className="text-2xl font-semibold mb-10 text-center mt-20">
           All Queries
         </h2>
 
-        <div className="flex flex-col md:flex-row justify-between items-center mb-10">
+        <div
+          data-aos="fade-up"
+          className="flex flex-col md:flex-row justify-between items-center mb-10">
           <div className="p-4">
             <h2 className="text-lg font-semibold mb-1">Search Query</h2>
             <input

@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header className="pb-16 mt-16">
-      <section className="max-width-wrapper">
+      <section data-aos="fade-in" className="max-width-wrapper">
         <div className="flex flex-col items-center space-y-8">
           <motion.h1
             className="text-center text-2xl sm:text-4xl sm:leading-[3.5rem] lg:text-[4.5rem] lg:leading-[5rem] font-bold"
@@ -41,7 +41,7 @@ const Header = () => {
 
       {/* Slider */}
       <section className="mt-12 max-width-wrapper">
-        <div className="rounded-xl overflow-clip">
+        <div data-aos="zoom-in" className="rounded-xl overflow-clip">
           <SwiperComponent />
         </div>
       </section>

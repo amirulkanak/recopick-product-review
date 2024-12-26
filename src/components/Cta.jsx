@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 const Cta = () => {
   return (
-    <div className="relative overflow-hidden py-16 px-8 md:px-16 text-white">
+    <div
+      data-aos="fade-in"
+      className="relative overflow-hidden py-16 px-8 md:px-16 text-white">
       <motion.div
         className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient"
         initial={{ backgroundPosition: '0% 50%' }}

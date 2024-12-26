@@ -7,6 +7,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 
 const ForgetPasswordPage = () => {
   document.title = 'Forget Password | Recopick';
+  window.scrollTo(0, 0);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -38,8 +39,8 @@ const ForgetPasswordPage = () => {
   };
 
   return (
-    <section className="bg-clr-neutral py-20 lg:py-[120px]">
-      <div className="max-width-wrapper">
+    <section data-aos="fade-in" className="bg-clr-neutral py-20 lg:py-[120px]">
+      <div className="max-width-wrapper min-h-screen">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white shadow-xl px-10 py-16 text-center sm:px-12 md:px-[60px]">

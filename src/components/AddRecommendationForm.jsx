@@ -77,7 +77,9 @@ const AddRecommendationForm = ({ query, refetch }) => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-gradient-to-b from-clr-accent/20 to-clr-accent/30 rounded-lg shadow-md">
+    <div
+      data-aos="zoom-in"
+      className="max-w-3xl mx-auto p-6 bg-gradient-to-b from-clr-accent/20 to-clr-accent/30 rounded-lg shadow-md">
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Recommendation Title */}
         <div>

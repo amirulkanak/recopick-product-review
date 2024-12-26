@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 
 const MyQueriesPage = () => {
   document.title = 'My Queries | Recopick';
+  window.scrollTo(0, 0);
   const [myQueries, setMyQueries] = useState([]);
   const [loading, setLoading] = useState(true);
   const { user } = useAuth();
@@ -69,7 +70,9 @@ const MyQueriesPage = () => {
   return (
     <>
       {/* Banner */}
-      <section className="relative bg-add-queries-bg bg-cover bg-center h-96">
+      <section
+        data-aos="fade-in"
+        className="relative bg-add-queries-bg bg-cover bg-center h-96">
         {/* Overlay */}
         <div className="absolute inset-0 bg-emerald-700 bg-opacity-90"></div>
         {/* Content */}
@@ -90,12 +93,16 @@ const MyQueriesPage = () => {
       </section>
 
       {/* Queries Card In descending Order */}
-      <section className="max-width-wrapper min-h-screen my-20">
+      <section
+        data-aos="fade-up"
+        className="max-width-wrapper min-h-screen my-20">
         <h2 className="text-3xl font-semibold mb-10 text-center">
           My Query List
         </h2>
         {myQueries.length === 0 ? (
-          <div className="flex items-center justify-center text-lg">
+          <div
+            data-aos="zoom-in"
+            className="flex items-center justify-center text-lg">
             {loading ? (
               <LoadingSpinner size={3} />
             ) : (

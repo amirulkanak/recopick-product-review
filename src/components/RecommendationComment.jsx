@@ -1,6 +1,8 @@
 const RecommendationComment = ({ comment }) => {
   return (
-    <div className="mt-5 bg-gradient-to-r from-clr-secondary/10 to-stone-400/10 p-6 rounded-lg shadow-md">
+    <div
+      data-aos="zoom-in"
+      className="mt-5 bg-gradient-to-r from-clr-secondary/10 to-stone-400/10 p-6 rounded-lg shadow-md">
       <div className="py-4 border-b border-clr-accent/80">
         <div className="flex items-center">
           <img

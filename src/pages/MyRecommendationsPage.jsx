@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 
 const MyRecommendationsPage = () => {
   document.title = 'My Recommendations | Recopick';
+  window.scrollTo(0, 0);
   const { user } = useAuth();
   const [recommendationsData, setRecommendationsData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -69,7 +70,9 @@ const MyRecommendationsPage = () => {
 
   return (
     <section className="max-width-wrapper min-h-screen my-10 px-4">
-      <h2 className="text-3xl font-semibold mb-10 text-center">
+      <h2
+        data-aos="fade-in"
+        className="text-3xl font-semibold mb-10 text-center">
         My Recommendations
       </h2>
       {loading ? (
@@ -78,7 +81,7 @@ const MyRecommendationsPage = () => {
         </div>
       ) : null}
       {!loading && recommendationsData.length === 0 ? (
-        <p className="text-center text-xl">
+        <p data-aos="fade-in" className="text-center text-xl">
           You didn't give any recommendation to a Query Yet!
         </p>
       ) : null}

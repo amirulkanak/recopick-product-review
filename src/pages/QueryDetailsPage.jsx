@@ -8,6 +8,7 @@ import RecommendationComment from '../components/RecommendationComment';
 
 const QueryDetailsPage = () => {
   document.title = 'Query Details | Recopick';
+  window.scrollTo(0, 0);
   const [queryData, setQueryData] = useState({});
   const [recommendationData, setRecommendationData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -48,7 +49,7 @@ const QueryDetailsPage = () => {
   return (
     <div className="min-h-screen my-20">
       {/* query card Details */}
-      <section className="max-width-wrapper">
+      <section data-aos="fade-in" className="max-width-wrapper">
         <h2 className="text-3xl font-semibold mb-10 text-center mt-10">
           Query Details
         </h2>
@@ -62,7 +63,7 @@ const QueryDetailsPage = () => {
       </section>
 
       {/* Add Recommendation Section */}
-      <section className="max-width-wrapper mt-10">
+      <section data-aos="fade-in" className="max-width-wrapper mt-10">
         <h2 className="text-3xl font-semibold mb-10 text-center">
           Add Recommendation
         </h2>
@@ -76,7 +77,7 @@ const QueryDetailsPage = () => {
       </section>
 
       {/* All Recommendation comments */}
-      <section className="max-width-wrapper mt-10">
+      <section data-aos="fade-in" className="max-width-wrapper mt-10">
         <h2 className="text-3xl font-semibold mb-10 text-center">
           All Recommendations
         </h2>

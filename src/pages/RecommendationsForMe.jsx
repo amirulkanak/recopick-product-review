@@ -6,6 +6,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 
 const RecommendationsForMe = () => {
   document.title = 'Recommendations For Me | Recopick';
+  window.scrollTo(0, 0);
   const { user } = useAuth();
   const [recommendationsData, setRecommendationsData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -32,7 +33,9 @@ const RecommendationsForMe = () => {
 
   return (
     <section className="max-width-wrapper min-h-screen my-20 px-4">
-      <h2 className="text-3xl font-semibold mb-10 text-center">
+      <h2
+        data-aos="fade-in"
+        className="text-3xl font-semibold mb-10 text-center">
         Recommendations For Me
       </h2>
       {loading ? (
@@ -41,7 +44,7 @@ const RecommendationsForMe = () => {
         </div>
       ) : null}
       {!loading && recommendationsData.length === 0 ? (
-        <p className="text-center text-xl">
+        <p data-aos="fade-in" className="text-center text-xl">
           No Recommendation for your query yet!
         </p>
       ) : null}

@@ -24,7 +24,9 @@ const LatestQuerySection = () => {
   }, []);
   return (
     <div className="max-width-wrapper mt-20 mb-10">
-      <h2 className="text-center text-3xl font-bold sm:text-4xl">
+      <h2
+        data-aos="fade-up"
+        className="text-center text-3xl font-bold sm:text-4xl">
         Latest Queries
       </h2>
       {/* Queries Cards */}
@@ -34,7 +36,9 @@ const LatestQuerySection = () => {
         </div>
       )}
       {!loading && (
-        <div className="grid w-fit mx-auto grid-cols-1 gap-5 mt-10 md:grid-cols-2 pc:grid-cols-3">
+        <div
+          data-aos="fade-up"
+          className="grid w-fit mx-auto grid-cols-1 gap-5 mt-10 md:grid-cols-2 pc:grid-cols-3">
           {queries.map((query) => (
             <QueryCard key={query._id} query={query} />
           ))}
