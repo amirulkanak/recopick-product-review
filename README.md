@@ -28,6 +28,7 @@ the Details and other recommendations also.
 ## NPM Packages
 - axios
 - firebase
+- JWT Authentication
 - react-router-dom
 - react-toastify
 - framer-motion
