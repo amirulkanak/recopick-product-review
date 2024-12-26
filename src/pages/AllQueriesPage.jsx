@@ -36,7 +36,7 @@ const AllQueriesPage = () => {
   );
 
   return (
-    <section className="bg-clr-neutral p-4">
+    <section className="bg-clr-neutral p-4 min-h-screen">
       <div className="max-width-wrapper">
         <h2 className="text-2xl font-semibold mb-10 text-center mt-20">
           All Queries

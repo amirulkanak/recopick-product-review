@@ -16,20 +16,20 @@ const MyQueriesPage = () => {
     const fetchMyQueries = async () => {
       try {
         const { data } = await axios.get(
-          `${import.meta.env.VITE_BACKEND_API_URL}/query/user/${user.email}`
+          `${import.meta.env.VITE_BACKEND_API_URL}/query/user/${user.email}`,
+          { withCredentials: true }
         );
 
         setMyQueries(data.result);
-        if (data.result.length === 0) {
-          setLoading(false);
-        }
+
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching queries:', error);
       }
     };
 
     fetchMyQueries();
-  }, [myQueries]);
+  }, [user.email]);
 
   const deleteQuery = async (id) => {
     try {
@@ -90,7 +90,7 @@ const MyQueriesPage = () => {
       </section>
 
       {/* Queries Card In descending Order */}
-      <section className="max-width-wrapper my-20">
+      <section className="max-width-wrapper min-h-screen my-20">
         <h2 className="text-3xl font-semibold mb-10 text-center">
           My Query List
         </h2>

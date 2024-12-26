@@ -46,7 +46,7 @@ const QueryDetailsPage = () => {
   }, [id]);
 
   return (
-    <>
+    <div className="min-h-screen my-20">
       {/* query card Details */}
       <section className="max-width-wrapper">
         <h2 className="text-3xl font-semibold mb-10 text-center mt-10">
@@ -76,7 +76,7 @@ const QueryDetailsPage = () => {
       </section>
 
       {/* All Recommendation comments */}
-      <section className="max-width-wrapper mt-10 mb-20">
+      <section className="max-width-wrapper mt-10">
         <h2 className="text-3xl font-semibold mb-10 text-center">
           All Recommendations
         </h2>
@@ -95,7 +95,7 @@ const QueryDetailsPage = () => {
             <RecommendationComment key={comment._id} comment={comment} />
           ))}
       </section>
-    </>
+    </div>
   );
 };
 

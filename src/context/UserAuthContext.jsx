@@ -10,6 +10,7 @@ import {
   sendPasswordResetEmail,
   onAuthStateChanged,
 } from 'firebase/auth';
+import axios from 'axios';
 
 // Create a Auth Context
 export const UserAuthContext = createContext();
@@ -66,12 +67,38 @@ const UserAuthContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+
+      // Jwt Token
+      if (currentUser?.email) {
+        const user = { email: currentUser.email };
+
+        axios
+          .post(`${import.meta.env.VITE_BACKEND_API_URL}/auth/login`, user, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            setLoading(false);
+          });
+      } else {
+        axios
+          .post(
+            `${import.meta.env.VITE_BACKEND_API_URL}/auth/logout`,
+            {},
+            {
+              withCredentials: true,
+            }
+          )
+          .then((res) => {
+            setLoading(false);
+          });
+      }
+
       if (currentUser) {
         setIsAuthenticated(true);
       } else {
         setIsAuthenticated(false);
       }
-      setLoading(false);
+      // setLoading(false);
     });
 
     return unsubscribe;

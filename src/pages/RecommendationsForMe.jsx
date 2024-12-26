@@ -16,7 +16,8 @@ const RecommendationsForMe = () => {
       const { data } = await axios.get(
         `${import.meta.env.VITE_BACKEND_API_URL}/recommendation/forMe/${
           user.email
-        }`
+        }`,
+        { withCredentials: true }
       );
       setRecommendationsData(data.result);
       setLoading(false);
@@ -30,7 +31,7 @@ const RecommendationsForMe = () => {
   }, [user.email]);
 
   return (
-    <section className="max-width-wrapper mt-10 px-4">
+    <section className="max-width-wrapper min-h-screen my-20 px-4">
       <h2 className="text-3xl font-semibold mb-10 text-center">
         Recommendations For Me
       </h2>
