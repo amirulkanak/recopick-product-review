@@ -22,8 +22,6 @@ const LatestQuerySection = () => {
 
     fetchQueries();
   }, []);
-
-  console.log(queries);
   return (
     <div className="max-width-wrapper mt-20 mb-10">
       <h2 className="text-center text-3xl font-bold sm:text-4xl">
