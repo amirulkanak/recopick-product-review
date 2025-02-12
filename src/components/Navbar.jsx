@@ -32,11 +32,7 @@ const Navbar = () => {
       <nav className="max-width-wrapper relative flex items-center justify-between py-8 ">
         {/* Logo */}
         <NavLink to={'/'} className="w-60">
-          <img
-            className="bg-clr-primary/10 rounded-lg p-1"
-            src={recopickLogo}
-            alt="Recopick Logo"
-          />
+          <img className="p-1" src={recopickLogo} alt="Recopick Logo" />
         </NavLink>
 
         <div>
