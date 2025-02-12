@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip';
-import 'react-tooltip/dist/react-tooltip.css';
 import recopickLogo from '../assets/icons/logo-recopick.png';
 import { LiaAlignLeftSolid } from 'react-icons/lia';
 import useAuth from '../hooks/useAuth';
