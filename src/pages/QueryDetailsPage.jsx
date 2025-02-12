@@ -88,7 +88,7 @@ const QueryDetailsPage = () => {
           </div>
         )}
         {!loadingRecom && recommendationData.length === 0 && (
-          <h3 className="text-xl text-center">No Recommendations yet!</h3>
+          <h3 className="text-xl text-center mb-32">No Recommendations yet!</h3>
         )}
         {!loadingRecom &&
           recommendationData.length > 0 &&
