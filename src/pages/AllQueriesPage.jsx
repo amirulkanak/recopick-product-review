@@ -12,6 +12,23 @@ const AllQueriesPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setGridLayout(3);
+      } else if (window.innerWidth > 500) {
+        setGridLayout(2);
+      } else {
+        setGridLayout(1);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
     const fetchQueries = async () => {
       try {
         const { data } = await axios.get(
