@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import recopickLogo from '../assets/icons/logo-recopick.png';
 
 const Footer = () => {
@@ -53,7 +53,7 @@ const Footer = () => {
 
             <LinkGroup header="Helpful Links">
               <CustomNavLink label="About Us" />
-              <NavLink to={'/queries'}>Queries</NavLink>
+              <Link to={'/queries'}>Queries</Link>
               <CustomNavLink label="Contact Us" />
               <CustomNavLink label="Careers" />
               <CustomNavLink label="FAQs" />
