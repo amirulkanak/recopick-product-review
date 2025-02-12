@@ -2,7 +2,7 @@ const QueryDetailsCard = ({ query }) => {
   return (
     <div
       data-aos="zoom-in"
-      className="max-w-2xl mx-auto bg-clr-accent/10 shadow-lg rounded-lg overflow-hidden border">
+      className="max-w-3xl mx-auto bg-clr-accent/10 shadow-lg rounded-lg overflow-hidden border">
       <div className="p-4">
         {/* Posted User Details */}
         <div className="mb-4">
