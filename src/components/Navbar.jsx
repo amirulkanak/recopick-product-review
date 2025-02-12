@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 import recopickLogo from '../assets/icons/logo-recopick.png';
 import { LiaAlignLeftSolid } from 'react-icons/lia';
 import useAuth from '../hooks/useAuth';
@@ -81,7 +83,10 @@ const Navbar = () => {
               )}
 
               {user && (
-                <div className="h-[42px] w-[42px] rounded-full border">
+                <div
+                  data-tooltip-id="userName"
+                  data-tooltip-content={user.displayName}
+                  className="h-[42px] w-[42px] rounded-full border">
                   <img
                     src={user.photoURL}
                     alt={user.displayName}
@@ -112,6 +117,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      <Tooltip id="userName" />
     </section>
   );
 };
